@@ -13,10 +13,9 @@ class ErrorTests(unittest.TestCase):
         self.app_context.pop()
 
     def test_page_not_found_status_code(self):
-        result = self.client.get('/missing-page')
-        self.assertEqual(result.status_code, 404)
+        test_page = self.client.get('/missing-page')
+        self.assertEqual(test_page.status_code, 404)
 
     def test_page_not_found_data(self):
-        result = self.client.get('/missing-page')
-        self.assertIn(b'Page not found', result.data)
-
+        test_page = self.client.get('/missing-page')
+        self.assertIn(b'Page not found', test_page.data)

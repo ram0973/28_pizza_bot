@@ -22,7 +22,7 @@ def page_not_found(_):
 
 
 @main.app_errorhandler(HTTP_451)
-def internal_server_error(_):
+def unavailable_for_legal_reasons(_):
     return render_template('errors/451.html'), HTTP_451
 
 
@@ -32,6 +32,6 @@ def internal_server_error(_):
 
 
 @main.errorhandler(CSRFError)
-def handle_csrf_error(e):
-    return render_template('errors/csrf.html', csrf_error=e.description), \
-           HTTP_400
+def handle_csrf_error(csrf_err):
+    return render_template('errors/csrf.html',
+                           csrf_error=csrf_err.description), HTTP_400
