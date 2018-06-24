@@ -1,2 +1,9 @@
-pytelegrambotapi==2.3.0
-jinja2==2.8
+click==6.7
+Flask==1.0.2
+Flask-Admin==1.5.1
+Flask-SQLAlchemy==2.3.2
+Flask-WTF==0.14.2
+Jinja2==2.10
+pyTelegramBotAPI==3.6.3
+requests[socks]==2.19.1
+python-dotenv==0.8.2
