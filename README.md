@@ -1,5 +1,8 @@
 # Telegram Bot for Pizzeria
 
+<img src="https://github.com/ram0973/28_pizza_bot/blob/master/screenshot.png"
+width="476" height="417">
+
 This application written in Python 3 for a small Pizzeria shop.
 
 Application implements:
