@@ -7,6 +7,7 @@ from app import create_app, db
 from app.auth import PizzaView
 from app.bot import pizza_catalog_bot
 from app.models.catalog import Pizza, Size
+from app.models.seeds import pizzas, sizes
 
 app = create_app(os.getenv('FLASK_ENV') or 'default')
 
@@ -41,7 +42,6 @@ def init_database():
 
 @db_cli.command('seed')
 def seed_database():
-    from app.models.seeds import pizzas, sizes
     db.session.bulk_insert_mappings(Size, sizes)
     db.session.bulk_insert_mappings(Pizza, pizzas)
     db.session.commit()
