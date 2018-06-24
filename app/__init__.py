@@ -3,6 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 from app.app_config import config
+from .main.views import main as main_blueprint
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,7 +23,6 @@ def create_app(config_name):
     app.add_url_rule('/favicon.ico', 'favicon',
                      lambda: app.send_static_file('favicon.ico'))
 
-    from .main.views import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     return app
