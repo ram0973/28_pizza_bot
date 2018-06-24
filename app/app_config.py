@@ -9,6 +9,8 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     AUTH_USERNAME = os.environ.get('AUTH_USERNAME')
     AUTH_PASSWORD = os.environ.get('AUTH_PASSWORD')
+    if not AUTH_USERNAME or not AUTH_PASSWORD:
+        raise Exception('Auth credentials not set')
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 

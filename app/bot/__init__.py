@@ -1,13 +1,13 @@
 import os
-from functools import reduce
-
 import telebot
 from telebot import apihelper
 from jinja2 import Template
 from app.models.catalog import Pizza
 from app import create_app
 
-TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+if not BOT_TOKEN:
+    raise Exception('Bot token not set')
 # {'https':'socks5://userproxy:password@proxy_address:port'}
 # we using Tor proxy service: https://www.torproject.org/
 PROXY = {'https': 'socks5://127.0.0.1:9050'}
@@ -21,7 +21,7 @@ def pizza_catalog_bot():
     app = create_app(os.getenv('FLASK_ENV') or 'default')
 
     apihelper.proxy = PROXY
-    bot = telebot.TeleBot(TOKEN)
+    bot = telebot.TeleBot(BOT_TOKEN)
 
     with open(CATALOG_TEMPLATE, 'r', encoding='utf8') as catalog_file:
         catalog_template = Template(catalog_file.read())
