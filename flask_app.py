@@ -9,7 +9,10 @@ from app.models import Pizza, Size
 
 app = create_app(os.getenv('FLASK_ENV') or 'default')
 
-admin = Admin(app, index_view=AdminIndexView(name='Pizza Store Admin', url='/'))
+admin = Admin(app, index_view=AdminIndexView(
+    name='Pizza Store Admin',
+    url='/'),
+    template_mode = 'bootstrap3')
 admin.add_view(PizzaView(Pizza, db.session))
 admin.add_view(PizzaView(Size, db.session))
 
