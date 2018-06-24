@@ -53,6 +53,7 @@ PROXY = {'https': 'socks5://127.0.0.1:9050'}
 
 Step 2. Register new telegram bot for development purposes, get the new
 token: [@BotFather](https://telegram.me/botfather)
+
 (If you can't view this page, use Tor browser, or just find and add
 @botfather in Telegram, then enter command: /newbot)
 
