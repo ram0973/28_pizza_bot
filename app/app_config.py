@@ -5,7 +5,6 @@ DB_DIR = os.path.join(basedir, 'db')
 
 
 class Config:
-    APP_NAME = os.environ.get('APP_NAME') or 'APP'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     AUTH_USERNAME = os.environ.get('AUTH_USERNAME')
     AUTH_PASSWORD = os.environ.get('AUTH_PASSWORD')
