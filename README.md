@@ -30,7 +30,7 @@ $ export SECRET_KEY='SOME_KEY'
 $ export AUTH_USERNAME='some_admin_username' # needed for admin page
 $ export AUTH_PASSWORD='some_admin_password' # needed for admin page
 $ # export DATABASE_URL or DEV_DATABASE_URL if you need
-$ flask database init
+$ flask database drop
 $ flask database seed
 $ # deactivate
 ```

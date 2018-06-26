@@ -33,7 +33,7 @@ def tests():
 db_cli = AppGroup('database')
 
 
-@db_cli.command('init')
+@db_cli.command('drop')
 def init_database():
     db.drop_all()
     db.create_all()
